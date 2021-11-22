@@ -7,7 +7,6 @@
     <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
     <title>Document</title>
 </head>
-
 <body>
     <div class="container">
         <div class="row">
@@ -49,11 +48,9 @@
                         <button type="submit" class="btn btn-primary">Cadastrar</button>
                     </form>
             </section>
-
             <section class="col-md-2"></section>
         </div>
     </div>
-
 </body>
 <script src="../js/jquery-3.5.1.slim.min.js"></script>
 <script src="../js/popper.min.js"></script>
