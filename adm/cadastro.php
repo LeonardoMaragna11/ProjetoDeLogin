@@ -24,10 +24,10 @@
                             <textarea name="desc" class="form-control" id="desc"></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="arq">Imagem da Capa : </label>
+                            <label for="arquivo">Imagem da Capa : </label>
                             <div class="custom-file mb-3">
-                                <input type="file" class="custom-file-input" id="arq" name="arq">
-                                <label class="custom-file-label" for="arq">procurar arquivo</label>
+                                <input type="file" class="custom-file-input" id="arquivo" name="arquivo">
+                                <label class="custom-file-label" for="arquivo">procurar arquivo</label>
                             </div>
                         </div>
                         <div class="form-group">
