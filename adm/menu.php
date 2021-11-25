@@ -11,7 +11,7 @@
 <?php   
     if(isset($_SESSION['usuario']) && $_SESSION['usuario']['id']=='1'){
         echo("<h1 style=' text-align: center'>Welcome Back <strong>".$_SESSION['usuario']['nome']."</strong></h1>");
-        //print_r($_SESSION);
+        //print_r($_SESSION);   
 ?>
 <body>
     <div class="container">
