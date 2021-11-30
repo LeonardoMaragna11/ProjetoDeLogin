@@ -43,7 +43,8 @@
                                     $res->bindValue(1,$i);
                                     $res->execute();
                                     if($campo = $res ->fetch(PDO::FETCH_ASSOC)){
-                                        if(!$campo['cod_ed']=='' && !$campo['nome_ed']=='' ){
+                                        if(!$campo['cod_ed']=='' && !$campo['nome_ed']==''
+                                         !$campo['cod_ed']==NULL && !$campo['nome_ed']==NULL ){
                                            $editora['cod_ed'][$i] = $campo["cod_ed"];
                                            $editora['nome_ed'][$i] = $campo["nome_ed"];
                                         }
