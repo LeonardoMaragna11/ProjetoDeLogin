@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 
@@ -5,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
-    <title>Document</title>
+    <title>Cadastro</title>
 </head>
 <body>
     <div class="container">
@@ -24,16 +25,34 @@
                             <textarea name="desc" class="form-control" id="desc"></textarea>
                         </div>
                         <div class="form-group">
-                            <label for="arquivo">Imagem da Capa : </label>
+                            <label for="arq">Imagem da Capa : </label>
                             <div class="custom-file mb-3">
-                                <input type="file" class="custom-file-input" id="arquivo" name="arquivo">
-                                <label class="custom-file-label" for="arquivo">procurar arquivo</label>
+                                <input type="file" class="custom-file-input" id="arq" name="arq">
+                                <label class="custom-file-label" for="arq">procurar arquivo</label>
                             </div>
                         </div>
                         <div class="form-group">
                             <label for="ed">Editora: </label>
                             <select class="form-control" name="ed" id="ed">
                             <option>Selecione ...</option>
+                            <?php 
+                                require_once("../servidor.php");//Conexão com o servidor
+                                $sql = "SELECT * FROM tb_editora WHERE cod_ed = ?";//Consulta
+                                $res = $serv->prepare($sql);
+                                for ($i=1; $i <= 3; $i++) { 
+                                    $res->bindValue(1,$i);
+                                    $res->execute();
+                                    if($campo = $res ->fetch(PDO::FETCH_ASSOC)){
+                                        if(!$campo['cod_ed']=='' && !$campo['nome_ed']=='' ){
+                                           $editora['cod_ed'][$i] = $campo["cod_ed"];
+                                           $editora['nome_ed'][$i] = $campo["nome_ed"];
+                                        }
+                                    }
+                                    echo("<option>");
+                                    echo ($editora['nome_ed'][$i]);
+                                    echo("</option>");
+                                }
+                            ?>
                             </select>
                         </div>
                         <div class="form-group " style="width:30%;">
@@ -51,6 +70,7 @@
             <section class="col-md-2"></section>
         </div>
     </div>
+                            
 </body>
 <script src="../js/jquery-3.5.1.slim.min.js"></script>
 <script src="../js/popper.min.js"></script>
