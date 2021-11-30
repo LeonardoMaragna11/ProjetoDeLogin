@@ -10,7 +10,7 @@ $diretorio = "img/".$imagem ["name"];
 $sql = "insert into tb_livro(cod_ed, titulo_liv, desc_liv, img_liv, valor_liv)"; 
 $sql.= " values(?, ?, ?, ? ,?)";
 
-$stm = $servidor->prepare($sql);
+$stm = $serv->prepare($sql);
 $stm->bindValue(1, $_POST["ed"]);
 $stm->bindValue(2, $tituto);
 $stm->bindValue(3, $desc);
