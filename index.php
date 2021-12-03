@@ -1,6 +1,6 @@
 <?php
-require("servidor.php");
-
+    require("servidor.php");
+    session_start();
 ?>
 
 <!DOCTYPE html>
@@ -19,30 +19,21 @@ require("servidor.php");
         <table class="table table-bordered">
             <tr>
                 <?php
-                $sql = "select * from tb_livro";
-                $stm = $banco->prepare($sql);
-                $stm->execute();
-
-                while ($campo = $stm->fetch(PDO::FETCH_ASSOC)) {
-                    echo "<td>";
-                     echo "<img src='adm/img/" . $campo["img_liv"] . "' width='' height=''>";
-                    echo "<h3>" . strtoupper($campo["titulo_liv"]) . "</h3>";
-                    echo "<a href='detalhe.php?cod_liv=" . $campo['cod_liv'] . "'> Detalhe</a>";
-                    
-                    echo "</td>";
-                }
-
+                    $sql = "select * from tb_livro";
+                    $stm = $banco->prepare($sql);
+                    $stm->execute();
+                    while ($campo = $stm->fetch(PDO::FETCH_ASSOC)) {
+                        echo "<td>";
+                        echo "<img src='adm/img/" . $campo["img_liv"] . "' width='' height=''>";
+                        echo "<h3>" . strtoupper($campo["titulo_liv"]) . "</h3>";
+                        echo "<a href='detalhe.php?cod_liv=" . $campo['cod_liv'] . "'> Detalhe</a>";
+                        echo "</td>";
+                    }
                 ?>
-
             </tr>
-
         </table>
-
     </div>
-
     <script src="../js/jquery-3.5.1.slim.min.js"></script>
     <script src="../js/popper.min.js"></script>
-
 </body>
-
 </html>

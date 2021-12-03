@@ -12,16 +12,11 @@ session_start();
     <title>Document</title>
     <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
 </head>
-
 <body>
     <div class="container">
-        
 <?php   
    if (isset($_SESSION['usuario'])) {
-  
-        echo "<h5>Olá, " . $_SESSION["usuario"]["nome"] ."</h5>"; //session_id();
-
-
+        echo "<center><h1>Olá, " . $_SESSION["usuario"]["nome"] ."</h1></center>"; //session_id();
 ?>
 
         <nav class="nav nav-pills flex-column flex-sm-row">
