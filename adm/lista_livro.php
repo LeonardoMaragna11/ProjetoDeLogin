@@ -41,8 +41,8 @@
                             echo "<td>" . $campo["titulo_liv"]. "</td>";
                             echo "<td>" . $campo["valor_liv"]. "</td>";
                             echo "<td>
-                                    <a href='altLivro.php?cod_liv=". $campo["cod_liv"]."'>Editar</a> /
-                                    <a href='delLivro.php?cod_liv=". $campo["cod_liv"]."'>Deletar</a> 
+                                    <a  href='altLivro.php?cod_liv=". $campo["cod_liv"]."'>Editar</a> /
+                                    <a style='color: red' href='delLivro.php?cod_liv=". $campo["cod_liv"]."'>Deletar</a> 
                                 </td>";
                             echo "</tr>";
                         }
