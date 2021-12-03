@@ -1,5 +1,8 @@
 <?php
+session_start();
  require("../servidor.php");
+ if(isset($_SESSION['usuario'])){
+
 ?>
 
 <!DOCTYPE html>
@@ -95,3 +98,8 @@
 <script src="../js/popper.min.js"></script>
 
 </html>
+<?php
+    }else{
+        header("Location: index.php");
+    }
+?>

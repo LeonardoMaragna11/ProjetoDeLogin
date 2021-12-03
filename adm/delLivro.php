@@ -15,12 +15,16 @@
 <body>
     <div class="container">
    <?php
-    $sql = "DELETE FROM tb_livro WHERE cod_liv = ?";
-    $stmt = $banco->prepare($sql);
-    $stmt->bindValue(1, $_GET['cod_liv']);
-    if($stmt->execute()){
-        header("Location: lista_livro.php")
-         }
+   if(isset($_SESSION['usuario'])){
+        $sql = "DELETE FROM tb_livro WHERE cod_liv = ?";
+        $stmt = $banco->prepare($sql);
+        $stmt->bindValue(1, $_GET['cod_liv']);
+        if($stmt->execute()){
+            header("Location: lista_livro.php");
+        }
+    }else{
+        header("Location: index.php");
+    }
    ?>
     </div>
 </body>
