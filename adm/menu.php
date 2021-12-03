@@ -37,7 +37,7 @@ session_start();
     </iframe>
 <?php
    }else{
-         echo "Não tem permissão";   
+         header("Location: index.php");
    }
 ?>
 

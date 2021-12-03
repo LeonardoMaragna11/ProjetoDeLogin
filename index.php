@@ -16,10 +16,10 @@
 
 <body>
     <Header>
-        <div>
+        <div id="logo">
             <img src="" alt="">
         </div>
-        <div>
+        <div id="login">
             <a href="adm/menu.php"><button>Login</button></a>
         </div>
     </Header>
@@ -33,7 +33,7 @@
                     while ($campo = $stm->fetch(PDO::FETCH_ASSOC)) {
                         echo "<td>";
                         echo "<img src='adm/img/" . $campo["img_liv"] . "' width='' height=''>";
-                        echo "<h3>" . strtoupper($campo["titulo_liv"]) . "</h3>";
+                        echo "<h3>" . $campo["titulo_liv"]. "</h3>";
                         echo "<a href='detalhe.php?cod_liv=" . $campo['cod_liv'] ."'> Detalhe</a>";
                         echo "</td>";
                     }
