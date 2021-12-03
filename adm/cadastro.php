@@ -19,13 +19,10 @@ session_start();
 <body>
     <div class="container">
         <div class="row">
-            <section class="col-md-2">
-
-               
+            <section class="col-md-2">               
             </section>
             <section class="col-md-8">
                 <h3 class="mt-5">Cadastro de Livro</h2>
-
                     <form action="CadLivro.php" method="post" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="t">Titulo : </label>
@@ -35,46 +32,29 @@ session_start();
                             <label for="desc">Descrição : </label>
                             <textarea name="desc" class="form-control" id="desc"></textarea>
                         </div>
-
                         <div class="form-group">
                             <label for="arq">Imagem da Capa : </label>
                             <div class="custom-file mb-3">
 
                                 <input type="file" class="custom-file-input" id="arq" name="arq">
                                 <label class="custom-file-label" for="arq">procurar arquivo</label>
-
                             </div>
                         </div>
-
                         <div class="form-group">
                             <label for="ed">Editora: </label>
-                            
-                           
-
                             <select class="form-control" name="ed" id="ed">
                             <option>Selecione ...</option>
-                              
                               <?php
                                  $sql = "select * from tb_editora";
-
                                  $smt = $banco->prepare($sql);
                                  $smt->execute(); // bool
-                                 
-
                                  while($campo = $smt->fetch(PDO::FETCH_ASSOC)){
                                     echo "<option value=".$campo["cod_ed"].">"
                                     .$campo["nome_ed"]."</option>";
                                  }
-                                   
-
                                ?> 
-                            
-                            
                             </select>
-
                         </div>
-
-
                         <div class="form-group " style="width:30%;">
                             <label for="valor">Valor: </label>
 
@@ -88,15 +68,12 @@ session_start();
                         <button type="submit" class="btn btn-primary">Cadastrar</button>
                     </form>
             </section>
-
             <section class="col-md-2"></section>
         </div>
     </div>
-
 </body>
 <script src="../js/jquery-3.5.1.slim.min.js"></script>
 <script src="../js/popper.min.js"></script>
-
 </html>
 <?php
     }else{
