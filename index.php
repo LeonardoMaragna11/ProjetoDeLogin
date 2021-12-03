@@ -15,6 +15,14 @@
 </head>
 
 <body>
+    <Header>
+        <div>
+            <img src="" alt="">
+        </div>
+        <div>
+            <a href="adm/menu.php"><button>Login</button></a>
+        </div>
+    </Header>
     <div class="container mt-5">
         <table class="table table-bordered">
             <tr>
@@ -26,7 +34,7 @@
                         echo "<td>";
                         echo "<img src='adm/img/" . $campo["img_liv"] . "' width='' height=''>";
                         echo "<h3>" . strtoupper($campo["titulo_liv"]) . "</h3>";
-                        echo "<a href='detalhe.php?cod_liv=" . $campo['cod_liv'] . "'> Detalhe</a>";
+                        echo "<a href='detalhe.php?cod_liv=" . $campo['cod_liv'] ."'> Detalhe</a>";
                         echo "</td>";
                     }
                 ?>
