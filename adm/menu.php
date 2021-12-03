@@ -25,7 +25,9 @@ session_start();
             <a class="flex-sm-fill text-sm-center nav-link" href="lista_livro.php" target="link">Lista de Livros</a>
             <a class="flex-sm-fill text-sm-center nav-link" href="#" target="link">
             <a class="flex-sm-fill text-sm-center nav-link" href="#">Usuários</a>
-            <a class="flex-sm-fill text-sm-center nav-link " href="sair.php" tabindex="-1" >sair</a>
+            <a class="flex-sm-fill text-sm-center nav-link " href="sair.php" tabindex="-1" >
+                <button class="btn btn-danger">sair</button>
+            </a>
             
         </nav>
 
