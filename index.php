@@ -20,7 +20,7 @@
             <img src="" alt="">
         </div>
         <div id="login">
-            <a href="adm/menu.php"><button>Login</button></a>
+            <a href="adm/menu.php"><button class="btn btn-primary">Login</button></a>
         </div>
     </Header>
     <div class="container mt-5">

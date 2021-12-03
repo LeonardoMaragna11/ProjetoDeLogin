@@ -26,8 +26,10 @@
                         </div>
                         <br>
                         <button type="submit" class="btn btn-primary">Acesso</button>
+                        
                     </fieldset>
                 </form>
+                <a href="../index.php"><button class="btn btn-danger" >Voltar</button></a>
             </section>
          <section class="col-4"></section> 
       </div>
