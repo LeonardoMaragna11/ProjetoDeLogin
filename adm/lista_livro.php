@@ -21,10 +21,10 @@
         <section class="col-md-8">
             <h3 class="mt-5">Lista de Livros</h3>
 
-            <table class="table table-bordered">
+            <table class="table table-bordered" id="tabela_lista_livro">
                 <thead>
                     <tr>
-                        <th scope="col">#</th>
+                        <th scope="col"><img href="https://i.pinimg.com/600x315/08/72/79/0872797eed964d55b62437c4abd95e22.jpg"></th>
                         <th scope="col">Titulo</th>
                         <th scope="col">Valor</th>
                         <th scope="col">Editar / DELETAR</th>
