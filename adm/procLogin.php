@@ -16,22 +16,14 @@ try {
     $stmt->execute();
 
     if ($campo = $stmt->fetch(PDO::FETCH_ASSOC)) {
-       // print_r($campo);
         $_SESSION['usuario']['id'] = $campo["cod_us"];
         $_SESSION['usuario']['nome'] = $campo["nome_us"];
-        //print_r($_SESSION["usuario"]);
         header('Location:menu.php');
     } 
     else {
-        echo "Não encontrado!!";
+        $_SESSION['erro']="<div class='erro'><p class='msg_erro'>Usuario ou senha inválido</p></div>";
+        header('Location: index.php');
     }
 } catch (PDOException $e) {
-
     echo $e->getMessage();
-    // while($campos =  $stmt->fetch(PDO::FETCH_ASSOC)){
-
-    //     print_r( $campos['cod_us'] . $campos['nome_us'] . "<br>");
-
-    //  }
-
 }

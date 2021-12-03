@@ -1,3 +1,4 @@
+<?php session_start(); ?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,6 +14,15 @@
          <div class="row pt-5">  
              <div class="col-md-4 "></div> 
              <section class="col-md-4">
+                <?php 
+
+                    if(isset($_SESSION['erro'])){
+                        echo($_SESSION['erro']);
+                        unset($_SESSION['erro']);
+                    }
+
+                
+                ?>
                 <form action="procLogin.php" method="post">
                     <fieldset>
                         <legend>Identifique</legend>                        
@@ -29,6 +39,7 @@
                         
                     </fieldset>
                 </form>
+                <br>    
                 <a href="../index.php"><button class="btn btn-danger" >Voltar</button></a>
             </section>
          <section class="col-4"></section> 

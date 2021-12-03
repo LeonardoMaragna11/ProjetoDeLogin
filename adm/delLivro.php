@@ -19,7 +19,7 @@
     $stmt = $banco->prepare($sql);
     $stmt->bindValue(1, $_GET['cod_liv']);
     if($stmt->execute()){
-        echo "deletado com sucesso";
+        header("Location: lista_livro.php")
          }
    ?>
     </div>

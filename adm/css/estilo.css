@@ -4,3 +4,9 @@ body{
     background-position-x: center;
     background-position-y: 200px;
 }
+.erro{
+    background-color: rgb(248, 120, 120);
+}
+.msg_erro{
+    color: red;
+}
