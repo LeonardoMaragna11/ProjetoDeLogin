@@ -1,36 +1,37 @@
 <?php
+session_start();
+require('../servidor.php');
 
-echo("<!DOCTYPE html><html lang='pt-br'>");
-    session_start();
-    require_once("../servidor.php");//Trazendo arquivo de conexão
-    echo("<br>");
+//https://www.php.net/manual/pt_BR/pdo.exec.php
+//PDO::exec — Executa uma instrução SQL e retornar o número de linhas afetadas
 try {
-    //code...
+    $login = $_POST['login'];
+    $senha = md5($_POST['senha']);
 
-    echo $login = $_POST['login'];
-    echo "<br>";
-    echo $senha = md5($_POST['senha']);
-    echo "<br>";
-    $sql = "SELECT * FROM tb_usuario WHERE login_us = ? AND senha_us = ?";//String de Validação
-    $res = $serv->prepare($sql);
-    $res->bindValue(1, $login);
-    $res->bindValue(2, $senha);
-    $res->execute();
-    if($campo = $res->fetch(PDO::FETCH_ASSOC)){
-        //echo("Deu certo<br>");
-        //print_r($campo);
-        echo("<br>");
+    $sql = "select * from tb_usuario where login_us = ? and senha_us = ? ";
+    $stmt = $banco->prepare($sql);
+    $stmt->bindValue(1, $login);
+    $stmt->bindValue(2, $senha);
+    
+    $stmt->execute();
+
+    if ($campo = $stmt->fetch(PDO::FETCH_ASSOC)) {
+       // print_r($campo);
         $_SESSION['usuario']['id'] = $campo["cod_us"];
         $_SESSION['usuario']['nome'] = $campo["nome_us"];
-        $_SESSION['usuario']['login'] = $campo['login_us'];
-        
-        header("Location: menu.php");
-    }else{
-        header("Location: index.php");
-        echo("erro");
+        //print_r($_SESSION["usuario"]);
+        header('Location:menu.php');
+    } 
+    else {
+        echo "Não encontrado!!";
     }
-    echo("<br>");
 } catch (PDOException $e) {
-    echo($e->get_Message);
-}   
-?>
+
+    echo $e->getMessage();
+    // while($campos =  $stmt->fetch(PDO::FETCH_ASSOC)){
+
+    //     print_r( $campos['cod_us'] . $campos['nome_us'] . "<br>");
+
+    //  }
+
+}

@@ -1,4 +1,10 @@
 <!DOCTYPE html>
+<?php
+
+require('../servidor.php');
+
+?>
+
 <html>
 <head>
     <meta charset="UTF-8">
@@ -10,7 +16,19 @@
 
 <body>
     <div class="container">
-
+    
+   <?php
+    $sql = "delete from tb_livro where cod_liv = ?";
+    $stmt = $banco->prepare($sql);
+    $stmt->bindValue(1, $_GET['cod_liv']);
+    
+    
+    if($stmt->execute()){
+        echo "deletado com sucesso";
+         }
+   
+   ?>
+    </div>
 </body>
 
 <script src="../js/jquery-3.5.1.slim.min.js"></script>

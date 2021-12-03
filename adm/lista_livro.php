@@ -1,3 +1,10 @@
+<?php
+
+require('../servidor.php');
+
+?>
+
+
 <!DOCTYPE html>
 <html>
 
@@ -12,7 +19,7 @@
 <body>
     <div class="container">
         <section class="col-md-2">
-            
+
         </section>
         <section class="col-md-8">
             <h3 class="mt-5">Lista de Livros</h3>
@@ -27,13 +34,29 @@
                     </tr>
                 </thead>
                 <tbody>
+                    <?php
+                    $sql = "select cod_liv, titulo_liv, valor_liv from tb_livro";
+                   
+                    $stmt = $banco->prepare($sql);
+                    $stmt->execute();
+                     while( $campo = $stmt->fetch(PDO::FETCH_ASSOC)) 
+                     {  echo "<tr>";
+                        echo "<td>" . $campo["cod_liv"]. "</td>";
+                        echo "<td>" . $campo["titulo_liv"]. "</td>";
+                        echo "<td>" . $campo["valor_liv"]. "</td>"; // number_format
+                        echo "<td>
+                                <a href='altLivro.php?cod_liv=". $campo["cod_liv"]."'>Editar</a> /
+                                <a href='delLivro.php?cod_liv=". $campo["cod_liv"]."'>Deletar</a> 
+                             </td>";
+                        echo "</tr>";
+                     }
+                    ?>
 
-                    
                 </tbody>
             </table>
 
 
-           
+
         </section>
         <section class="col-md-2"></section>
 
