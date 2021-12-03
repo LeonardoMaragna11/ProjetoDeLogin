@@ -32,7 +32,7 @@
                     $stm->execute();
                     while ($campo = $stm->fetch(PDO::FETCH_ASSOC)) {
                         echo "<td>";
-                        echo "<img src='adm/img/" . $campo["img_liv"] . "' width='' height=''>";
+                        echo "<img style='width: 200px; height: 300px' src='adm/img/" . $campo["img_liv"] . "' width='' height=''>";
                         echo "<h3>" . $campo["titulo_liv"]. "</h3>";
                         echo "<a href='detalhe.php?cod_liv=" . $campo['cod_liv'] ."'> Detalhe</a>";
                         echo "</td>";
