@@ -7,10 +7,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="../css/bootstrap.min.css" type="text/css">
+    <link rel="stylesheet" href="css/estilo.css" type="text/css">
     <title>Document</title>
 </head>
 
-<body>
+<body id="root">
     <div class="container">
         <div class="row pt-5">
             <div class="col-md-4 "></div>

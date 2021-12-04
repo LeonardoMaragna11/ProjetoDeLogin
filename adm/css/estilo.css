@@ -6,10 +6,17 @@ body{
 }
 .erro{
     background-color: rgb(248, 120, 120);
+    height: calc(1.5em + .75rem + 2px);
+    border-radius: 5px;
+    text-align: center;
 }
 .msg_erro{
     color: red;
+
 }
 #tabela_lista_livro{
+    background-color: white;
+}
+#root{
     background-color: white;
 }
