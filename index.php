@@ -15,24 +15,22 @@
 </head>
 
 <body>
-    <Header>
-        <div id="logo">
-            <img src="" alt="">
+    <!-- <Header>
+        <div id="login" >
+            <a href="adm/menu.php" style="left: 100px ; "><button style="left: 100px ; " class="btn btn-primary">Login</button></a>
         </div>
-        <div id="login">
-            <a href="adm/menu.php"><button class="btn btn-primary">Login</button></a>
-        </div>
-    </Header>
+    </Header> -->
     <div class="container mt-5">
         <table class="table table-bordered">
             <tr>
                 <?php
+                    $numero_lista=1;
                     $sql = "select * from tb_livro";
                     $stm = $banco->prepare($sql);
                     $stm->execute();
                     while ($campo = $stm->fetch(PDO::FETCH_ASSOC)) {
                         echo "<td>";
-                        echo "<img style='width: 200px; height: 300px' src='adm/img/" . $campo["img_liv"] . "' width='' height=''>";
+                        echo "<img style='width: 200px; height: 300px; ' src='adm/img/" . $campo["img_liv"] . "'>";
                         echo "<h3>" . $campo["titulo_liv"]. "</h3>";
                         if(isset($_SESSION['usuario'])){
                             echo("<a  href='adm/altLivro.php?cod_liv=". $campo["cod_liv"]."'>Editar</a>");
@@ -40,9 +38,8 @@
                             echo("<a href='#'>Comprar</a>");
                         }
                         echo "</td>";
+                       
                     }
-                    
-            
                 ?>
             </tr>
         </table>

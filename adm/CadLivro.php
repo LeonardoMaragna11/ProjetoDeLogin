@@ -9,7 +9,6 @@ $imagem   = $_FILES["arq"];
 $valor    = $_POST["valor"];
 $diretorio = "img/".$imagem ["name"]; 
 
-
 $sql = "INSERT INTO tb_livro(cod_ed, titulo_liv, desc_liv, img_liv, valor_liv) VALUES(?, ?, ?, ? ,?)";
 
 $stm = $banco->prepare($sql);

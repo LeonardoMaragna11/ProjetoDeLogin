@@ -1,9 +1,6 @@
 <?php
 session_start();
 require('../servidor.php');
-
-//https://www.php.net/manual/pt_BR/pdo.exec.php
-//PDO::exec — Executa uma instrução SQL e retornar o número de linhas afetadas
 try {
     $login = $_POST['login'];
     $senha = md5($_POST['senha']);

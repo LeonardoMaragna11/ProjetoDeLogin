@@ -1,7 +1,8 @@
 <?php
+
 session_start();
- require("../servidor.php");
- if(isset($_SESSION['usuario'])){
+require("../servidor.php");
+if(isset($_SESSION['usuario'])){
 
 ?>
 
@@ -35,7 +36,6 @@ session_start();
                         <div class="form-group">
                             <label for="arq">Imagem da Capa : </label>
                             <div class="custom-file mb-3">
-
                                 <input type="file" class="custom-file-input" id="arq" name="arq">
                                 <label class="custom-file-label" for="arq">procurar arquivo</label>
                             </div>
@@ -45,9 +45,9 @@ session_start();
                             <select class="form-control" name="ed" id="ed">
                             <option>Selecione ...</option>
                               <?php
-                                 $sql = "select * from tb_editora";
+                                 $sql = "SELECT * FROM tb_editora";
                                  $smt = $banco->prepare($sql);
-                                 $smt->execute(); // bool
+                                 $smt->execute();
                                  while($campo = $smt->fetch(PDO::FETCH_ASSOC)){
                                     echo "<option value=".$campo["cod_ed"].">"
                                     .$campo["nome_ed"]."</option>";
@@ -57,7 +57,6 @@ session_start();
                         </div>
                         <div class="form-group " style="width:30%;">
                             <label for="valor">Valor: </label>
-
                             <div class="input-group">
                                 <div class="input-group-prepend">
                                     <div class="input-group-text">$</div>
