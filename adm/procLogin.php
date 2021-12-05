@@ -18,7 +18,7 @@ try {
         header('Location:menu.php');
     } 
     else {
-        $_SESSION['erro']="<div class='erro'><p class='msg_erro'>Usuario ou senha inválido</p></div>";
+        $_SESSION['erro']="<div class='container'><p class='text-danger'>Usuario ou senha inválido</p></div>";
         header('Location: index.php');
     }
 } catch (PDOException $e) {
