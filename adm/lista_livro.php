@@ -40,7 +40,6 @@
                         $stmt = $banco->prepare($sql);
                         $stmt->execute();
                         while($campo = $stmt->fetch(PDO::FETCH_ASSOC)) {
-                              
                             echo "<tr>";
                             echo "<td>";
                             echo $numero_lista; 

@@ -39,16 +39,25 @@ $campo = $stm->fetch(PDO::FETCH_ASSOC);
                         <div class="form-group">
                                 <label for="t">Titulo : </label>
                                 <input type="text" class="form-control" id="t" name="titulo" 
-                                value="">
+                                value="<?php  echo($campo['titulo_liv']); ?>">
                             </div>
                             <div class="form-group">
                                 <label for="desc">Descrição : </label>
-                                <textarea name="desc" class="form-control" id="desc"></textarea>
+                                <textarea value="<?php echo($campo['desc_liv']); ?>" name="desc" class="form-control" id="desc"></textarea>
                             </div>
                             <div class="form-group">
                             <label for="ed">Editora: </label>
                             <select class="form-control" name="ed" id="ed">
-                            <option>Selecione ...</option>
+                                <?php
+                                    $sql = "SELECT * FROM tb_editora WHERE cod_ed = ?";
+                                    $smt = $banco->prepare($sql);
+                                    $smt->bindValue(1,$campo['cod_ed']);
+                                    $smt->execute();
+                                    while($campo = $smt->fetch(PDO::FETCH_ASSOC)){
+                                        echo "<option value=".$campo["cod_ed"].">"
+                                        .$campo["nome_ed"]."</option>";
+                                     }  
+                                ?> 
                               <?php
                                  $sql = "SELECT * FROM tb_editora";
                                  $smt = $banco->prepare($sql);
@@ -67,7 +76,7 @@ $campo = $stm->fetch(PDO::FETCH_ASSOC);
                                         <div class="input-group-text">$</div>
                                     </div>
                                     <input type="text" class="form-control" id="valor" name="valor"
-                                    value=""
+                                    value="<?php  echo($campo['valor_liv']); ?>"
                                     >
                                 </div>
                             </div>

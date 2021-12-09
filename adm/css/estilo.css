@@ -19,3 +19,16 @@ body{
 #root{
     background-color: white;
 }
+.tbl{
+    width: 300px;
+    display: block;
+}
+
+#conteudo{
+    display: flex;
+    flex-direction: row;
+    /* justify-content: center; */
+    align-items: center;
+    width: 100%;
+    overflow-x: auto;
+}

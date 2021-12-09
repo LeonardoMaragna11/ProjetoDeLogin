@@ -10,7 +10,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="css/bootstrap.min.css" type="text/css">
-
+    <link rel="stylesheet" href="adm/css/estilo.css">
     <title>Document</title>
 </head>
 
@@ -20,9 +20,9 @@
             <a href="adm/menu.php" style="left: 100px ; "><button style="left: 100px ; " class="btn btn-primary">Login</button></a>
         </div>
     </Header> -->
-    <div class="container mt-5">
+    <div class="container mt-5" id="conteudo">
         <table class="table table-bordered">
-            <tr>
+            <tr id='tbl'>
                 <?php
                     $numero_lista=1;
                     $sql = "select * from tb_livro";
