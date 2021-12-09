@@ -21,6 +21,7 @@ session_start();
 ?>
 
         <nav class="nav nav-pills flex-column flex-sm-row">
+            <a href="../index.php" class="flex-sm-fill text-sm-center nav-link" style="color: green;" target="link">Menu</a>
             <a class="flex-sm-fill text-sm-center nav-link" href="cadastro.php" target="link">Cadastro de livros</a>
             <a class="flex-sm-fill text-sm-center nav-link" href="lista_livro.php" target="link">Lista de Livros</a>
             <a class="flex-sm-fill text-sm-center nav-link" href="#" target="link">
