@@ -2,11 +2,18 @@
 session_start();
 include_once ("../servidor.php");
 
+
+
+?>
+
+
+
+<?php
 $cod_ed   = $_POST["ed"];
 $tituto   = $_POST["titulo"]; 
 $desc     = $_POST["desc"];
 $imagem   = $_FILES["arq"];
-$valor    = $_POST["valor"];
+$valor    = strval( $_POST["valor"]);
 $diretorio = "img/".$imagem ["name"]; 
 
 $sql = "INSERT INTO tb_livro(cod_ed, titulo_liv, desc_liv, img_liv, valor_liv) VALUES(?, ?, ?, ? ,?)";

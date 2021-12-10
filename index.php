@@ -14,18 +14,13 @@
     <title>Document</title>
 </head>
 
-<body>
-    <!-- <Header>
-        <div id="login" >
-            <a href="adm/menu.php" style="left: 100px ; "><button style="left: 100px ; " class="btn btn-primary">Login</button></a>
-        </div>
-    </Header> -->
+<body id="root">
     <div class="container mt-5" id="conteudo">
         <table class="table table-bordered">
             <tr id='tbl'>
                 <?php
                     $numero_lista=1;
-                    $sql = "select * from tb_livro";
+                    $sql = "SELECT * FROM tb_livro";
                     $stm = $banco->prepare($sql);
                     $stm->execute();
                     while ($campo = $stm->fetch(PDO::FETCH_ASSOC)) {

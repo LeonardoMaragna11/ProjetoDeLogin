@@ -33,7 +33,7 @@ $campo = $stm->fetch(PDO::FETCH_ASSOC);
                     <form action="procAltLivro.php" method="post" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="cod_liv">ID</label>
-                                <input type="text" class="form-control" name="cod_liv" value="<?php  echo($campo['cod_liv']); ?>">
+                                <input type="text" class="form-control" disabled="" name="cod_liv" value="<?php  echo($campo['cod_liv']); ?>">
                             
                         </div>  
                         <div class="form-group">
@@ -43,7 +43,9 @@ $campo = $stm->fetch(PDO::FETCH_ASSOC);
                             </div>
                             <div class="form-group">
                                 <label for="desc">Descrição : </label>
-                                <textarea value="<?php echo($campo['desc_liv']); ?>" name="desc" class="form-control" id="desc"></textarea>
+                                <textarea name="desc" class="form-control" id="desc">
+                                    <?php echo($campo['titulo_liv']);?>
+                                </textarea>
                             </div>
                             <div class="form-group">
                             <label for="ed">Editora: </label>
@@ -75,9 +77,13 @@ $campo = $stm->fetch(PDO::FETCH_ASSOC);
                                     <div class="input-group-prepend">
                                         <div class="input-group-text">$</div>
                                     </div>
-                                    <input type="text" class="form-control" id="valor" name="valor"
-                                    value="<?php  echo($campo['valor_liv']); ?>"
-                                    >
+                                        <input
+                                            type="text" 
+                                            class="form-control" 
+                                            id="valor" 
+                                            name="valor"
+                                            value="<?php echo $campo['titulo_liv'] ?>"
+                                        />
                                 </div>
                             </div>
                             <button type="submit" class="btn btn-primary">Alterar</button>

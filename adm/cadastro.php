@@ -61,7 +61,7 @@ if(isset($_SESSION['usuario'])){
                                 <div class="input-group-prepend">
                                     <div class="input-group-text">$</div>
                                 </div>
-                                <input type="text" class="form-control" id="valor" name="valor">
+                                <input type="number" class="form-control" id="valor" name="valor">
                             </div>
                         </div>
                         <button type="submit" class="btn btn-primary">Cadastrar</button>

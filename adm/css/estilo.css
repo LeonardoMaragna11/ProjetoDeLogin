@@ -27,8 +27,16 @@ body{
 #conteudo{
     display: flex;
     flex-direction: row;
-    /* justify-content: center; */
     align-items: center;
     width: 100%;
     overflow-x: auto;
+}
+#root{
+    height: 450px;
+}
+.table-bordered td, .table-bordered th{
+    background: #fff;
+}
+html{
+    background-color: #fff;
 }
