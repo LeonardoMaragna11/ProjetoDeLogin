@@ -36,7 +36,8 @@ body{
 }
 .table-bordered td, .table-bordered th{
     background: #fff;
+    /* border:  solid black; */
 }
-html{
-    background-color: #fff;
+img{
+    border: 1px solid black;
 }
