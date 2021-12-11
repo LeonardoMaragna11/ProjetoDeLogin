@@ -44,7 +44,6 @@
                             echo "<td>";
                             echo $numero_lista; 
                             echo "</td>";
-                            
                             echo "<td>" . $campo["titulo_liv"]. "</td>";
                             echo "<td>" . number_format($campo["valor_liv"],2,',','.'). "</td>";
                             echo "<td>" . $campo["cod_liv"]. "</td>";
