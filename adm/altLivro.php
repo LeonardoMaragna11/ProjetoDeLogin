@@ -9,8 +9,7 @@ $stm = $banco->prepare($sql);
 $stm -> bindValue(1, $_GET['cod_liv']);
 $stm -> execute();
 $campo = $stm->fetch(PDO::FETCH_ASSOC);
- $valor =  number_format($campo["valor_liv"],2,',','.');
- echo $valor;
+$valorL =  number_format($campo["valor_liv"],2,',','.');
 
 ?>
 
@@ -83,8 +82,7 @@ $campo = $stm->fetch(PDO::FETCH_ASSOC);
                                             class="form-control" 
                                             id="valor" 
                                             name="valor"
-                                            value="<?php echo($valor) ?>"
-                                            placeholder = "<?php echo($valor) ?>"
+                                            placeholder = "<?php echo($valorL) ?>"
                                         />
                                 </div>
                             </div>
