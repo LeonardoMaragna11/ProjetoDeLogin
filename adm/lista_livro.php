@@ -3,6 +3,7 @@
     require('../servidor.php');
     if(isset($_SESSION['usuario'])){
 
+    
 ?>
 <!DOCTYPE html>
 <html>
@@ -40,12 +41,13 @@
                         $stmt = $banco->prepare($sql);
                         $stmt->execute();
                         while($campo = $stmt->fetch(PDO::FETCH_ASSOC)) {
+                            $valor = number_format($campo["valor_liv"],2,',','.');
                             echo "<tr>";
                             echo "<td>";
                             echo $numero_lista; 
                             echo "</td>";
                             echo "<td>" . $campo["titulo_liv"]. "</td>";
-                            echo "<td>" . number_format($campo["valor_liv"],2,',','.'). "</td>";
+                            echo "<td>" . $valor . "</td>";
                             echo "<td>" . $campo["cod_liv"]. "</td>";
                             echo "<td>
                                     <a  href='altLivro.php?cod_liv=". $campo["cod_liv"]."'>Editar</a> /

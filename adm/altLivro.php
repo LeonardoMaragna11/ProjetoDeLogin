@@ -4,12 +4,11 @@ require_once("../servidor.php");
 if(isset($_SESSION['usuario'])){
 $sql = "SELECT * FROM tb_livro WHERE cod_liv= ?";
 
-
 $stm = $banco->prepare($sql);
 $stm -> bindValue(1, $_GET['cod_liv']);
 $stm -> execute();
 $campo = $stm->fetch(PDO::FETCH_ASSOC);
-$valorL =  number_format($campo["valor_liv"],2,',','.');
+$valorL =  $campo["valor_liv"]
 
 ?>
 
@@ -33,8 +32,11 @@ $valorL =  number_format($campo["valor_liv"],2,',','.');
                     <form action="procAltLivro.php" method="post" enctype="multipart/form-data">
                         <div class="form-group">
                             <label for="cod_liv">ID</label>
-                                <input type="text" class="form-control" disabled="" name="cod_liv" value="<?php  echo($campo['cod_liv']); ?>">
-                            
+                                <input type="text" class="form-control" disabled
+                                 value="<?php  echo($campo['cod_liv']); ?>">
+
+                                <input type="text" class="form-control" style="display: none"
+                                name="cod_liv" value="<?php  echo($campo['cod_liv']); ?>">
                         </div>  
                         <div class="form-group">
                                 <label for="t">Titulo : </label>
@@ -43,9 +45,11 @@ $valorL =  number_format($campo["valor_liv"],2,',','.');
                             </div>
                             <div class="form-group">
                                 <label for="desc">Descrição : </label>
-                                <textarea name="desc" class="form-control" id="desc">
-                                    <?php echo($campo['titulo_liv']);?>
-                                </textarea>
+                                <input
+                                 name="desc" class="form-control" 
+                                 id="desc" 
+                                 value="<?php echo($campo['desc_liv']);?>">
+                                    
                             </div>
                             <div class="form-group">
                             <label for="ed">Editora: </label>
@@ -82,7 +86,7 @@ $valorL =  number_format($campo["valor_liv"],2,',','.');
                                             class="form-control" 
                                             id="valor" 
                                             name="valor"
-                                            placeholder = "<?php echo($valorL) ?>"
+                                            value = "<?php echo($valorL) ?>"
                                         />
                                 </div>
                             </div>
